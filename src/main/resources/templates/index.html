@@ -5,10 +5,10 @@
     <th:block th:replace="layout/plantilla :: head"></th:block>
 </head>
 <body>
-    <th:block th:replace="layout/plantilla :: header"></th:block>
+    <header th:replace="layout/plantilla :: header"></header>
     
     <section th:replace="~{carrito/fragmentos :: listadoProductos}"/>
 
-    <th:block th:replace="layout/plantilla :: footer"></th:block>
+    <footer th:replace="layout/plantilla :: footer" ></footer>
 </body>
 </html>
