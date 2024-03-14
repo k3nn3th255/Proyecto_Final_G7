@@ -1,4 +1,3 @@
-
 package com.Proyecto_Final_G7.domain;
 
 import jakarta.persistence.Column;
@@ -13,25 +12,34 @@ import java.io.Serializable;
 import java.util.List;
 import lombok.Data;
 
-
 @Data
 @Entity
-@Table(name="categoria")
+@Table(name = "categoria")
 public class Categoria implements Serializable {
-    
-     private static final long serialVersionUID = 1L;
-    
+
+    private static final long serialVersionUID = 1L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id_categoria")
+    @Column(name = "id_categoria")
     private Long idCategoria;
     private String descripcion;
     private String rutaImagen;
     private boolean activo;
-    /*
+
     //Para hacer una "asociaciòn" de uno a muchos, usando id_categoria como llave
     @OneToMany
-    @JoinColumn(name="id_categoria")
+    @JoinColumn(name = "id_categoria")
     List<Producto> productos;
-  */
+
+    @Override
+    public String toString() {
+        return "Categoria{"
+                + "idCategoria=" + idCategoria
+                + ", descripcion='" + descripcion + '\''
+                + ", rutaImagen='" + rutaImagen + '\''
+                + ", activo=" + activo
+                + '}';
+    }
+
 }
