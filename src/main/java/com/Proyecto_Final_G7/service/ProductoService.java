@@ -21,4 +21,16 @@ public interface ProductoService {
     
     public void delete(Producto producto);
     
+    public List<Producto> consultaJPA(double precioInf, double precioSup);
+    
+    // Se define una consulta ampliada JPQL para obtener la la lista de productos 
+    //Que se encuentran en un rango de precios
+    
+    public List<Producto> consultaJPQL(double precioInf, double precioSup);
+    
+    // Se define una consulta ampliada SQL navita  para obtener la la lista de productos 
+    //Que se encuentran en un rango de precios
+   
+    public List<Producto> consultaSQL(double precioInf, double precioSup);
+    
 }
