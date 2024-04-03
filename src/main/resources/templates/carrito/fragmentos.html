@@ -1,29 +1,34 @@
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns="http://www.w3.org/1999/xhtml"
       xmlns:sec="http://thymeleaf.org/extras/spring-security">
+
     <head th:replace="~{layout/plantilla :: head}">
         <title>FideAutos</title>
     </head>
     <body>
-         <div class="row row-cols-1">
-                <div class="card p-2" th:each="productos : ${productos}">                   
-                    <div class="card-header">
-                        <h4>[[${productos.marca}]]</h4>
-                    </div>
-                    <div class="card-body">
-                        <p>[[#{producto.precio}]]</p>
-                        <h4>[[${productos.precio}]]</h4>
-                    </div>
-                    <div class="card-body">
-                        <p>[[${productos.transmision}]]</p>
-                    </div>
-                    <figure>
-                        <img src="${productos.ruta_imagen}" width="200" height="200"/>
-                    </figure>
+        <div class="row row-cols-1">
+            <div class="card p-2" th:each="productos : ${productos}">                   
+                <div class="card-header">
+                    <h4>[[${productos.marca}]]</h4>
                 </div>
+                <div class="card-body">
+                    <p>[[#{producto.precio}]]</p>
+                    <h4>[[${productos.precio}]]</h4>
+                </div>
+                <div class="card-body">
+                    <p>[[${productos.transmision}]]</p>
+                </div>
+                <figure>
+                    <img src="${productos.ruta_imagen}" width="200" height="200"/>
+                </figure>
             </div>
-        
-           <section th:fragment="listadoProductos">
+        </div>
+
+
+
+
+
+        <section th:fragment="listadoProductos">
 
             <div class="row row-cols-1">
                 <div class="card p-2" th:each="productos : ${productos}">                   
@@ -54,114 +59,117 @@
                 </button>
             </form>
         </div>     
-        
-        
-        
-    <section th:fragment="Carousel">  
-        
-        <div id="carouselExample" class="carousel slide">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="https://www.autodetective.com/uploads/photos/hyundai/elantra/2018/1662647.jpg" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="https://storage.googleapis.com/proyectofinalg7-d7863.appspot.com/Proyecto_Final_G7/producto/img0000000000000000023Aberration_DLC.jpg?GoogleAccessId=firebase-adminsdk-epedd@proyectofinalg7-d7863.iam.gserviceaccount.com&Expires=2025771726&Signature=ENMYrFLa8EUelQPlUnhOPSXsk6tvRBtlH1kmpL2ABkHER%2BL593bCtTA6O%2FTRVCzsSExqZnwLVEKTLjgoI6fu5i6thtLtRN87Fuu9qA3U%2FgiVTaLYt9RmwMeBIDfMEtS5sLJCCnmiUdO85kB7GrMSJ94Z53RtJilb2vScDO0AsyNviLjhauvAJCYyQuIGNnvRFtITrB6%2FzziRdl1cjsQE27Q1zI8X4JS89g6bHcuK7Fuoi%2Bh5VIrK3gC5LhRt2nO9QG%2FZov0rMBird1xyjc12q34YyA9nxS2z0uzU6hn1UUUbgHhgyJ%2BVa7hb0zhi9fD%2Ffr%2FFiSPfyr1ynzC3z3wAGA%3D%3D" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="https://storage.googleapis.com/proyectofinalg7-d7863.appspot.com/Proyecto_Final_G7/producto/img0000000000000000024download%20%287%29.jpeg?GoogleAccessId=firebase-adminsdk-epedd@proyectofinalg7-d7863.iam.gserviceaccount.com&Expires=2025771883&Signature=eI9Nd6xbEe%2BMGlfDv2nIIQGVryc5L%2Beij%2FlcPOkeClFblKfzMId79%2BOkQxpT5TDgttF5UWDzuG%2BlmFsmU7i8YNBmqAIGNH3EG0ysTk4zXTDTh3mkSSQQO0KbIGqcCUgQdFr1UZBlBKs4OZUQaLmoyZkxfEgj7KP3HduiXVc8gupADvlhdWQVHUu1j2H1anatTqomMA8KxaZZKAdjQoClGB3kuEcxFArLrKOkMJxZW6s0Aj%2F7QfbQm29Old%2FhUCbZfCA7%2BYlpadwM1EqVtvq1K8UGpc1WiovkI6ET3Majc2s7CtcaZUyMt4J8io%2BvH9IAlJsiHF1mZkRsHT%2BDvC2kSQ%3D%3D" class="d-block w-100" alt="...">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
- </section>
-        
-        
-        
-        
-<!--        <section th:fragment="listadoCarrito" id="items">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-9">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4>[[#{carrito.titulo}]]</h4>
-                            </div>
-                            <div th:if="${items != null and !items.empty}">
-                                <table class="table table-stryped">
-                                    <thead class="thead-dark">
-                                        <tr>
-                                            <th>#</th>
-                                            <th>[[#{producto.descripcion}]]</th>
-                                            <th>[[#{producto.precio}]]</th>
-                                            <th>[[#{carrito.cantidad}]]</th>
-                                            <th>[[#{carrito.total}]]</th>
-                                            <th></th>
-                                            <th></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr th:each="item, contador : ${items}">
-                                            <td>[[${contador.count}]]</td>
-                                            <td>[[${item.descripcion}]]</td>
-                                            <td class="text-end">[[${item.precio}]]</td>
-                                            <td class="text-center">[[${item.cantidad}]]</td>
-                                            <td class="text-center">[[${item.cantidad*item.precio}]]</td>
-                                            <td>
-                                                <a th:href="@{/carrito/eliminar/}+${item.idProducto}"
-                                                   class="btn btn-danger">
-                                                    <i class='fas fa-trash'></i> [[#{accion.eliminar}]]
-                                                </a>
-                                            </td>
-                                            <td>
-                                                <a th:href="@{/carrito/modificar/}+${item.idProducto}"
-                                                   class="btn btn-success">
-                                                    <i class='fas fa-pencil'></i> [[#{accion.actualizar}]]
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="text-center p-2" th:if="${items== null or items.empty}">
-                                [[#{carrito.no_mostrar}]]
-                            </div>
-                        </div>
+
+
+
+        <section th:fragment="Carousel">  
+
+            <div id="carouselExample" class="carousel slide" >
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://www.autodetective.com/uploads/photos/hyundai/elantra/2018/1662647.jpg" width="1500" height="600" alt="..." class="d-block mx-auto" >
                     </div>
-                    <div class="col-md-3">
-                        <div class="card text-center bg-primary text-white mb-3">
-                            <div class="card-body">
-                                <h3>[[#{carrito.totalCompra}]]</h3>
-                                <h4 class="fs-4">
-                                    [[${carritoTotal}]]
-                                </h4>
-                            </div>
-                        </div>
-                        <div class="card text-center bg-success text-white mb-3">
-                            <div class="card-body">
-                                <a th:href="@{/}"
-                                   class="btn btn-success">
-                                    <i class='fas fa-reply'></i> [[#{carrito.seguirComprando}]]
-                                </a>
-                            </div>
-                        </div>
-                        <div class="card text-center bg-info text-white mb-3">
-                            <div class="card-body">
-                                <a th:href="@{/facturar/carrito}"
-                                   class="btn btn-info">
-                                    <i class='fas fa-fordward'></i> [[#{carrito.facturar}]]
-                                </a>
-                            </div>
-                        </div> 
+                    <div class="carousel-item">
+                        <img src="https://media.es.wired.com/photos/64f25753c71adbd96335d9e1/16:9/w_2560%2Cc_limit/Lexus-LC500h-1-scaled.jpeg" width="1500" height="600" alt="..." class="d-block mx-auto" >
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/0_Hyundai_Tucson_%28NX4%29_1.jpg" width="1500" height="600" alt="..." class="d-block mx-auto" >
                     </div>
                 </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+                
+                <button class="btn btn-secondary btn-lg d-block mx-auto" onclick="window.location.href = 'pruebas/listado2';" type="button">Ver el catalogo completo</button>
+
             </div>
-        </section>-->
+        </section>
+
+
+
+
+        <!--        <section th:fragment="listadoCarrito" id="items">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4>[[#{carrito.titulo}]]</h4>
+                                    </div>
+                                    <div th:if="${items != null and !items.empty}">
+                                        <table class="table table-stryped">
+                                            <thead class="thead-dark">
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>[[#{producto.descripcion}]]</th>
+                                                    <th>[[#{producto.precio}]]</th>
+                                                    <th>[[#{carrito.cantidad}]]</th>
+                                                    <th>[[#{carrito.total}]]</th>
+                                                    <th></th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr th:each="item, contador : ${items}">
+                                                    <td>[[${contador.count}]]</td>
+                                                    <td>[[${item.descripcion}]]</td>
+                                                    <td class="text-end">[[${item.precio}]]</td>
+                                                    <td class="text-center">[[${item.cantidad}]]</td>
+                                                    <td class="text-center">[[${item.cantidad*item.precio}]]</td>
+                                                    <td>
+                                                        <a th:href="@{/carrito/eliminar/}+${item.idProducto}"
+                                                           class="btn btn-danger">
+                                                            <i class='fas fa-trash'></i> [[#{accion.eliminar}]]
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        <a th:href="@{/carrito/modificar/}+${item.idProducto}"
+                                                           class="btn btn-success">
+                                                            <i class='fas fa-pencil'></i> [[#{accion.actualizar}]]
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="text-center p-2" th:if="${items== null or items.empty}">
+                                        [[#{carrito.no_mostrar}]]
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card text-center bg-primary text-white mb-3">
+                                    <div class="card-body">
+                                        <h3>[[#{carrito.totalCompra}]]</h3>
+                                        <h4 class="fs-4">
+                                            [[${carritoTotal}]]
+                                        </h4>
+                                    </div>
+                                </div>
+                                <div class="card text-center bg-success text-white mb-3">
+                                    <div class="card-body">
+                                        <a th:href="@{/}"
+                                           class="btn btn-success">
+                                            <i class='fas fa-reply'></i> [[#{carrito.seguirComprando}]]
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="card text-center bg-info text-white mb-3">
+                                    <div class="card-body">
+                                        <a th:href="@{/facturar/carrito}"
+                                           class="btn btn-info">
+                                            <i class='fas fa-fordward'></i> [[#{carrito.facturar}]]
+                                        </a>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>-->
     </body>
 </html>
