@@ -9,24 +9,27 @@
         <!-- 1 Sección para ver los carros bonitos...-->
         <section th:fragment="listadoProductos">
 
-            <div class="row row-cols-1">
-                <div class="card p-2" th:each="productos : ${productos}">                   
-                    <div class="card-header">
-                        <h4>[[${productos.marca}]]</h4>
-                    </div>
-                    <div class="card-body">
-                        <p>[[#{producto.precio}]]</p>
-                        <h4>[[${productos.precio}]]</h4>
-                    </div>
-                    <div class="card-body">
-                        <p>[[${productos.transmision}]]</p>
-                    </div>
+            <div class="row row-cols-2" > 
+                <div class = "card p-3" th:each="p : ${productos}"> 
                     <figure>
-                        <img src="${productos.ruta_imagen}" width="200" height="200"/>
+                        <img th:src="${p.rutaImagen}"  
+                             height="200" 
+                             alt="alt"/>
+
+                        <figcaption>
+                            ¢[[${p.precio}]] ([[${p.existencias}]])
+                        </figcaption>
                     </figure>
-                </div>
+                    <div class = "card-header">
+                        <h4>[[${p.marca}]]</h4>                        
+                    </div>
+                    <div class = "card-body">
+                        <p>[[${p.cilindrada}]]</p>
+
+                    </div>
+                </div> 
             </div>
-        </section>
+        </section>      
         <section th:fragment="filtros">
             <div class="row py-4">
                 <!--bloque de cosnsulta JPA -->
