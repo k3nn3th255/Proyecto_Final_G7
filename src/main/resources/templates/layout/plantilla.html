@@ -23,47 +23,51 @@
 </head>
 <body>
 <header th:fragment="header" class="header">
-    <nav class="navbar navbar-dark bg-warning p-1">
-        <div class="container justify-content-center">
-            <a th:href="@{/}" class="navbar-brand text-primary">FideAutos</a>
-            <button class="navbar-toggler"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="nav nav-pills">
-                    <li class="nav-item">
-                        <a class="nav-link" th:href="@{/categoria/listado}">[[#{plantilla.categorias}]]</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" th:href="@{/producto/listado}">[[#{plantilla.productos}]]</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle"
-                           data-bs-toggle="dropdown"
-                           href="#"
-                           role="button"
-                           aria-expanded="false">plantilla.pruebas</a>
-                        <ul class="dropdown-menu dropdown-menu-dark">
-                            <li><a class="dropdown-item" th:href="@{/pruebas/listado}">[[#{plantilla.asociaciones}]]</a></li>
-                            <li><a class="dropdown-item" th:href="@{/pruebas/listado2}">[[#{plantilla.consultas}]]</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <ul class="navbar-nav">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"
-                           role="button" aria-expanded="false">Lang</a>
-                        <ul class="dropdown-menu dropdown-menu-dark">
-                            <li><a class="dropdown-item" th:href="@{/(lang=es)}">ES</a></li>
-                            <li><a class="dropdown-item" th:href="@{/(lang=en)}">EN</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
+    
+    
+   <nav class="navbar navbar-dark bg-warning p-1 ">
+    <div class="container justify-content-center">
+        <a th:href="@{/}" class="navbar-brand text-primary">FideAutos</a>
+        <button class="navbar-toggler "
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon" style="color : blue"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link text-primary" text-primary th:href="@{/categoria/listado}" style="color: blue;">[[#{plantilla.categorias}]]</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-primary" th:href="@{/producto/listado}" style="color: blue;">[[#{plantilla.productos}]]</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-primary"
+                       data-bs-toggle="dropdown"
+                       href="#"
+                       role="button"
+                       aria-expanded="false" style="color: blue;">Pruebas</a>
+                    <ul class="dropdown-menu dropdown-menu-primary">
+                        <li><a class="dropdown-item" th:href="@{/pruebas/listado}">[[#{plantilla.asociaciones}]]</a></li>
+                        <li><a class="dropdown-item" th:href="@{/pruebas/listado2}">[[#{plantilla.consultas}]]</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-primary" data-bs-toggle="dropdown" href="#"
+                       role="button" aria-expanded="false" style="color: blue;">Lang</a>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                        <li><a class="dropdown-item" th:href="@{/(lang=es)}">ES</a></li>
+                        <li><a class="dropdown-item" th:href="@{/(lang=en)}">EN</a></li>
+                    </ul>
+                </li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
+
+      
     <section id="main-header" class="py-2 bg-light text-dark">
         <div class="container">
             <div class="row">
