@@ -84,8 +84,26 @@
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
-                
+
                 <button class="btn btn-secondary btn-lg d-block mx-auto" onclick="window.location.href = 'pruebas/listado2';" type="button">Ver el catalogo completo</button>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-6 text-center">
+                            <button id="mostrarMapaBtn" class="btn btn-primary" onclick="mostrarMapa()">Ubicanos!</button>
+                        </div>
+                    </div>
+                    <div id="mapContainer" class="row justify-content-center mt-3" style="display: none;">
+                        <div class="col-8 text-center">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.3054196235207!2d-84.1461592886302!3d9.991610473136282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0faf89f62fc53%3A0x920a942930d65331!2sUniversidad%20Fid%C3%A9litas%20Heredia!5e0!3m2!1ses-419!2scr!4v1712271002486!5m2!1ses-419!2scr" width="1300" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    function mostrarMapa() {
+                        document.getElementById('mapContainer').style.display = 'block';
+                    }
+                </script>
 
             </div>
         </section>
