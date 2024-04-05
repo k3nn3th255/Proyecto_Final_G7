@@ -14,7 +14,7 @@
     <name>Proyecto_Final_G7</name>
     <description>Proyecto final de desarrollo web</description>
     <properties>
-        <java.version>20</java.version>
+        <java.version>17</java.version>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
     </properties>
