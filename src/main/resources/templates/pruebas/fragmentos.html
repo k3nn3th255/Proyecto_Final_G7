@@ -4,36 +4,36 @@
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
     <head th:replace="~{layout/plantilla :: head}">
         <title>FideAutos</title>
+
+
     </head>
     <body>
         <!-- 1 Sección para ver los carros bonitos...-->
-        <section th:fragment="listadoProductos">
+        <main th:fragment="listadoProductos">
 
-            <div class="row row-cols-2" > 
-                <div class = "card p-3" th:each="p : ${productos}"> 
-                    <figure>
-                        <img th:src="${p.rutaImagen}"  
-                             height="200" 
-                             alt="alt"/>
+            <div class="container-fluid bg-trasparent my-4 p-3" style="position: relative;">
+                <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3" >
 
-                        <figcaption>
-                            ¢[[${p.precio}]] ([[${p.existencias}]])
-                        </figcaption>
-                    </figure>
-                    <div class = "card-header">
-                        <h4>[[${p.marca}]]</h4>                        
+                    <div class="col" th:each="p : ${productos}">
+                        <div class="card h-100 shadow-sm">
+                            <img th:src="${p.rutaImagen}" class="card-img-top" th:alt="${p.marca}"/>
+                            <div class="card-body">
+                                <div class="clearfix mb-3">
+                                    <span class="float-start badge rounded-pill bg-primary">[[${p.marca}]] / [[${p.cilindrada}]]</span>
+                                    <span class="float-end price-hp">[[${p.precio}]]&colon;</span> <span style="margin-left: 30%">Existencias:[[${p.existencias}]]</span> </div>
+                                <h5 class="card-title">Innovador en diseño, potente en rendimiento y lujoso en cada detalle, este vehículo representa la máxima expresión de ingeniería automotriz. Desde el primer vistazo, 
+                                    su silueta aerodinámica y líneas elegantes capturan la atención, mientras que su interior exquisitamente diseñado ofrece una experiencia de conducción incomparable.</h5>
+                                <div class="text-center my-4"> <a href="#" class="btn btn-warning">Comprar</a> </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class = "card-body">
-                        <p>[[${p.cilindrada}]]</p>
-
-                    </div>
-                    <div class="card-body ">
-                        <P>Innovador en diseño, potente en rendimiento y lujoso en cada detalle, este vehículo representa la máxima expresión de ingeniería automotriz. Desde el primer vistazo, su silueta aerodinámica y líneas elegantes capturan la atención, mientras que su interior exquisitamente diseñado ofrece una experiencia de conducción incomparable. Equipado con lo último en tecnología avanzada, cada aspecto de este automóvil ha sido meticulosamente diseñado para ofrecer comodidad, seguridad y un rendimiento excepcional en cada viaje.</P>
-                    </div>
-                </div> 
-                
+                </div>
             </div>
-        </section>  
+
+
+
+
+        </main>  
         <!-- 2 Sección para ver el listado de productos en "bonito"-->
         <section th:fragment="tabsCategorias">
             <div class="row py-4">
