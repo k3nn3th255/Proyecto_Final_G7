@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface ItemService {
     
-    //Se usa para tener en memoria informacion del carrito de compras 
+    //Se usa para tener en memoria de acceso aleatorio. del carrito de compras 
     List<Item> listaItems = new ArrayList<>();
     
     public List<Item> gets();
