@@ -6,11 +6,6 @@ package com.Proyecto_Final_G7.domain;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-
-/**
- *
- * @author dylan
- */
 @Data
 @EqualsAndHashCode(callSuper=false)
 public class Item extends Producto {

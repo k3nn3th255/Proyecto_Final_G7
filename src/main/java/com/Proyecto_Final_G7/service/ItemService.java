@@ -8,10 +8,6 @@ import com.Proyecto_Final_G7.domain.Item;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author dylan
- */
 public interface ItemService {
     
     //Se usa para tener en memoria informacion del carrito de compras 
