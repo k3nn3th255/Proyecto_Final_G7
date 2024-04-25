@@ -20,13 +20,22 @@
                     <div class="col" th:each="p : ${productos}">
                         <div class="card h-100 shadow-sm">
                             <img th:src="${p.rutaImagen}" class="card-img-top" th:alt="${p.marca}"/>
+                        
                             <div class="card-body">
                                 <div class="clearfix mb-3">
                                     <span class="float-start badge rounded-pill bg-primary">[[${p.marca}]] / [[${p.cilindrada}]]</span>
                                     <span class="float-end price-hp">₡[[${p.precio}]]&colon;</span> <span style="margin-left: 30%">Existencias: [[${p.existencias}]]</span> </div>
                                 <h5 class="card-title">Innovador en diseño, potente en rendimiento y lujoso en cada detalle, este vehículo representa la máxima expresión de ingeniería automotriz. Desde el primer vistazo, 
                                     su silueta aerodinámica y líneas elegantes capturan la atención, mientras que su interior exquisitamente diseñado ofrece una experiencia de conducción incomparable.</h5>
-                                <div class="text-center my-4"> <a href="#" class="btn btn-warning">[[#{carrito.agregar}]]</a> </div>
+                                 <form action="action">
+                                     <button class='btn btn-light' type="button">
+                                         <i class="fas fa-cart-plus">
+                                         </i>
+                                     </button>
+                            
+                               
+                            </form>
+                                
                             </div>
                         </div>
                     </div>
