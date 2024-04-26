@@ -48,17 +48,25 @@ public class ProductoServiceImpl implements ProductoService {
     }
 
     @Override
-    public List<Producto> consultaJPA(double precioInf, double precioSup) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    @Transactional(readOnly = true)
+    public List<Producto> consultaJPA(double precioInf, double precioSup){
+        return productoDao.findByPrecioBetweenOrderByPrecio(precioInf, precioSup);
     }
 
+    // Se define una consulta ampliada JPQL para obtener la la lista de productos 
+    //Que se encuentran en un rango de precios
     @Override
-    public List<Producto> consultaJPQL(double precioInf, double precioSup) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    @Transactional(readOnly = true)
+    public List<Producto> consultaJPQL(double precioInf, double precioSup){
+        return productoDao.consultaJPQL(precioInf, precioSup);
     }
 
+    // Se define una consulta ampliada SQL navita  para obtener la la lista de productos 
+    //Que se encuentran en un rango de precios
     @Override
-    public List<Producto> consultaSQL(double precioInf, double precioSup) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    @Transactional(readOnly = true)
+    public List<Producto> consultaSQL(double precioInf, double precioSup){
+        return productoDao.consultaSQL(precioInf, precioSup);
     }
+
 }
